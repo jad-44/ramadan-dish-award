@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>جائزة ملكة غسيل العدة</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(#fff3cd,#ffe0a3);
+text-align:center;
+direction:rtl;
+margin:0;
+padding:20px;
+}
+
+h1{
+color:#b36b00;
+font-size:36px;
+}
+
+.card{
+background:white;
+margin:20px auto;
+padding:20px;
+width:80%;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+background:#ff9800;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e68900;
+}
+
+.result{
+font-size:22px;
+margin-top:20px;
+color:#8b0000;
+font-weight:bold;
+}
+
+.level{
+font-size:18px;
+margin:10px;
+}
+
+</style>
+
+<script>
+
+let votes = {
+"جوري":0,
+"نيرة":0,
+"ندى":0,
+"غيداء":0,
+"فاتن":0,
+"ربا":0,
+"سجى":0,
+"روان":0
+}
+
+function vote(){
+
+let selected = document.querySelector('input[name="girl"]:checked');
+
+if(!selected){
+alert("اختاري مرشحة أولاً 😄");
+return;
+}
+
+votes[selected.value]++;
+
+document.getElementById("result").innerHTML =
+"😂 شكراً لتصويتكم... لكن بعد مراجعة لجنة الصحون العليا تبين أن النتيجة محسومة: نيرة هي ملكة غسيل العِدّة 👑🧼";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>🏆 جائزة ملكة غسيل العِدّة في رمضان</h1>
+
+<p>احتفال سوداني رمضاني لتكريم البطلات اللواتي يواجهن جبال الصحون بعد الإفطار 🍽🌙</p>
+
+<div class="card">
+
+<h2>المرشحات من دنقلا</h2>
+
+<label><input type="radio" name="girl" value="جوري"> جوري</label><br>
+<label><input type="radio" name="girl" value="نيرة"> نيرة</label><br>
+<label><input type="radio" name="girl" value="ندى"> ندى</label><br>
+<label><input type="radio" name="girl" value="غيداء"> غيداء</label>
+
+</div>
+
+<div class="card">
+
+<h2>المرشحات من المملكة العربية السعودية</h2>
+
+<label><input type="radio" name="girl" value="فاتن"> فاتن</label><br>
+<label><input type="radio" name="girl" value="ربا"> ربا</label><br>
+<label><input type="radio" name="girl" value="سجى"> سجى</label><br>
+<label><input type="radio" name="girl" value="روان"> روان</label>
+
+</div>
+
+<div class="card">
+
+<h2>مستويات الصعوبة في غسيل العِدّة</h2>
+
+<div class="level">🥄 المستوى 1: صحون العصير</div>
+<div class="level">🍲 المستوى 2: قدور الشوربة</div>
+<div class="level">🔥 المستوى النهائي: صينية العصيدة بعد الإفطار</div>
+
+</div>
+
+<div class="card">
+
+<button onclick="vote()">صوّت الآن</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<p>🌙 رمضان كريم | بطولة الصحون الرمضانية</p>
+
+</body>
+  </html>
